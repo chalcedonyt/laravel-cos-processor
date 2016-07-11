@@ -1,6 +1,6 @@
 # COS Processor for Laravel
 
-Helper functions to deal with COS (Cheque Outsourcing Services). Generates files based on payment entries. UOB and HSBC supported at the moment
+Helper functions to deal with COS (Cheque Outsourcing Services). Generates files based on payment entries. UOB and HSBC supported at the moment. Look at the files under the documentation/ folder for the original documents from UOB and HSBC.
 
 ## Install
 
