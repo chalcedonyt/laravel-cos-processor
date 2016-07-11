@@ -15,6 +15,7 @@ class HSBCCOSUploadProcessorFactory
 {
     /**
      * @param Collection of entries to be passed into the adapter
+     * @param String The key to read the config from
      * @return String
      */
     public static function createCsvString($beneficiaries, $config_key)

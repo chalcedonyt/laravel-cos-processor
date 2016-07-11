@@ -19,6 +19,7 @@ class HSBCBeneficiaryFactory
     protected $model;
     /**
      * @param BeneficiaryAdapterInterface
+     * @param String The key to read the config from
      * @return BeneficiaryLines
      */
     public static function create(BeneficiaryAdapterInterface $beneficiary, $config_key){
@@ -32,6 +33,7 @@ class HSBCBeneficiaryFactory
 
     /**
      * @param BeneficiaryAdapterInterface
+     * @param String The key to read the config from
      */
     public static function createCOSDetailsRecordLine(BeneficiaryAdapterInterface $beneficiary, $config_key ){
         $line = new Line($config_key);
@@ -90,6 +92,7 @@ class HSBCBeneficiaryFactory
     /**
      * The Beneficiary Information Record
      * @param Beneficiary
+     * @param String The key to read the config from
      * @return Line a line
      */
     public static function createBeneficiaryRecordLine(BeneficiaryAdapterInterface $beneficiary, $config_key){
@@ -136,6 +139,7 @@ class HSBCBeneficiaryFactory
 
     /**
      * @param BeneficiaryAdapterInterface
+     * @param String The key to read the config from
      * @return Line a line
      */
     public static function createAdvisingRecordLine(BeneficiaryAdapterInterface $beneficiary, $config_key){
@@ -172,6 +176,7 @@ class HSBCBeneficiaryFactory
     /**
      * The Payment Details Table Row Content record
      * @param BeneficiaryAdapterInterface
+     * @param String The key to read the config from
      * @return Line a line
      */
     public static function createPaymentDetailsTableRowContentRecordLine(BeneficiaryAdapterInterface $beneficiary, $config_key){

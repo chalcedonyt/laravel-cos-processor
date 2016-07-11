@@ -32,6 +32,10 @@ class UOBBeneficiaryFactory
         return $beneficiary_lines;
     }
 
+    /**
+     * @param BeneficiaryAdapterInterface
+     * @param String The key to read the config from
+     */
     public static function cashiersOrderFormatPaymentInstructionLine(BeneficiaryAdapterInterface $beneficiary, $config_key){
         $line = new Line($config_key);
         $line -> setColumnDelimiter("");

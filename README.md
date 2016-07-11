@@ -12,11 +12,11 @@ $ composer require chalcedonyt/laravel-cos-processor
 
 ## Creating an Adapter
 
-Create an adapter that implements Chalcedonyt\\COSProcessor\\Adapter\\BeneficiaryAdapterInterface. This should translate your model into the attributes that will be used in the COS entries. Refer to Chalcedonyt\\COSProcessor\\Adapter\\ExampleBeneficiaryAdapter for an example.
+Create an adapter that implements `Chalcedonyt\\COSProcessor\\Adapter\\BeneficiaryAdapterInterface`. This should translate your model into the attributes that will be used in the COS entries. Refer to `Chalcedonyt\\COSProcessor\\Adapter\\ExampleBeneficiaryAdapter` for an example.
 
 ## Configuration
 
-`php artisan vendor:publish` should publish a cos_processor.php into the config folder. Edit this with the configuration options for your account. Change "beneficiary_adapter" to the class of the adapter you created earlier.
+`php artisan vendor:publish` should publish a `cos_processor.php` into the config folder. Edit this with the configuration options for your account. Change `"beneficiary_adapter"` to the class of the adapter you created earlier.
 
 
 ## Usage
