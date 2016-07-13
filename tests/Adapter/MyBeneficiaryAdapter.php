@@ -3,8 +3,8 @@ namespace Adapter;
 
 use Chalcedonyt\COSProcessor\Stringable;
 use Chalcedonyt\COSProcessor\Exceptions\COSProcessorColumnException;
-use Chalcedonyt\COSProcessor\Adapter\BeneficiaryAdapterAbstract;
-use Chalcedonyt\COSProcessor\Adapter\BeneficiaryAdapterInterface;
+use Chalcedonyt\COSProcessor\Adapter\Beneficiary\BeneficiaryAdapterAbstract;
+use Chalcedonyt\COSProcessor\Adapter\Beneficiary\BeneficiaryAdapterInterface;
 
 class MyBeneficiaryAdapter extends BeneficiaryAdapterAbstract implements BeneficiaryAdapterInterface
 {

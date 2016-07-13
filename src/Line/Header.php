@@ -4,7 +4,7 @@ namespace Chalcedonyt\COSProcessor\Line;
 
 use Chalcedonyt\COSProcessor\Stringable;
 use Chalcedonyt\COSProcessor\BeneficiaryLines;
-use Chalcedonyt\COSProcessor\Adapter\BeneficiaryAdapterInterface;
+use Chalcedonyt\COSProcessor\Adapter\Beneficiary\BeneficiaryAdapterInterface;
 
 abstract class Header extends Line implements Stringable
 {

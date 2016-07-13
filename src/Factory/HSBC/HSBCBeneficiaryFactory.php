@@ -5,7 +5,7 @@ namespace Chalcedonyt\COSProcessor\Factory\HSBC;
 use Chalcedonyt\COSProcessor\Line\Line;
 use Chalcedonyt\COSProcessor\Beneficiary;
 use Chalcedonyt\COSProcessor\BeneficiaryLines;
-use Chalcedonyt\COSProcessor\Adapter\BeneficiaryAdapterInterface;
+use Chalcedonyt\COSProcessor\Adapter\Beneficiary\BeneficiaryAdapterInterface;
 use Chalcedonyt\COSProcessor\Factory\Column\EmptyColumnFactory;
 use Chalcedonyt\COSProcessor\Factory\Column\PresetStringColumnFactory;
 use Chalcedonyt\COSProcessor\Factory\Column\VariableLengthStringColumnFactory;

@@ -19,7 +19,6 @@ class ConfigurableStringColumnFactory
      */
     public static function create($config, $config_key, $label = ''){
         if( !$config -> has($config_key)){
-            print_r($config);
             throw new COSProcessorColumnException('Could not find the config option '.$config_key);
         }
         $value = (string)$config -> get($config_key);;

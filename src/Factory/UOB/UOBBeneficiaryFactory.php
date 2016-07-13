@@ -3,7 +3,7 @@
 namespace Chalcedonyt\COSProcessor\Factory\UOB;
 
 use Chalcedonyt\COSProcessor\Line\Line;
-use Chalcedonyt\COSProcessor\Adapter\BeneficiaryAdapterInterface;
+use Chalcedonyt\COSProcessor\Adapter\Beneficiary\BeneficiaryAdapterInterface;
 use Chalcedonyt\COSProcessor\BeneficiaryLines;
 use Chalcedonyt\COSProcessor\Column\DateColumn;
 use Chalcedonyt\COSProcessor\Factory\Column\ConfigurableStringColumnFactory;

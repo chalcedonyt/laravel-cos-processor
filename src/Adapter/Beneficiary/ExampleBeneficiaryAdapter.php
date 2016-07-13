@@ -1,5 +1,5 @@
 <?php
-namespace Chalcedonyt\COSProcessor\Adapter;
+namespace Chalcedonyt\COSProcessor\Adapter\Beneficiary;
 
 use Chalcedonyt\COSProcessor\Stringable;
 use Chalcedonyt\COSProcessor\Exceptions\COSProcessorColumnException;

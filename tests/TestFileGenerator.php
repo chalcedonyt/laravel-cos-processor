@@ -7,6 +7,8 @@ use Adapter\MyBeneficiaryAdapter;
 use Chalcedonyt\COSProcessor\Factory\HSBC\HSBCCOSUploadProcessorFactory;
 use Chalcedonyt\COSProcessor\Factory\UOB\UOBCOSUploadProcessorFactory;
 
+use Chalcedonyt\COSProcessor\Factory\HSBC\Result\HSBCCOSResultAdapter;
+
 class TestFileGenerator extends Orchestra\Testbench\TestCase{
 
     public function setUp(){
@@ -60,7 +62,29 @@ class TestFileGenerator extends Orchestra\Testbench\TestCase{
 
         $cos = UOBCOSUploadProcessorFactory::createCsvString($beneficiaries, 'uob_example');
         echo $cos;
+    }
+
+    public function testHSBCUpload(){
+
+        //the first line is the Header
+        $handle = fopen( __DIR__ ."/ifile_result.csv", "r");
+        $index = 0;
+        $results = [];
+        while (($line = fgets($handle)) !== false) {
+            if( $index++ !== 0){
+                $adapter = new HSBCCOSResultAdapter($line);
+                $results[] = $adapter -> getCosResult();
+            }
+        }
+        fclose($handle);
+
+        $this -> assertEquals("ABU BIN BAKAR", $results[0] -> fullname);
+        $this -> assertEquals(200, $results[1] -> amount);
+        $this -> assertEquals(123458, $results[2] -> paymentId);
+        $this -> assertEquals('CIFB04008522', $results[3] -> transactionId);
+        $this -> assertEquals(\DateTime::createFromFormat('Y-m-d', '2015-11-05'), $results[4] -> dateTime);
 
     }
+
 
 }

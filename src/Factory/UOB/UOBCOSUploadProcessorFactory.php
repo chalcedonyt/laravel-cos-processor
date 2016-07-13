@@ -7,7 +7,7 @@ use Chalcedonyt\COSProcessor\Factory\UOB\Header\UOBBatchHeader;
 use Chalcedonyt\COSProcessor\Factory\UOB\Header\UOBBatchTrailer;
 use Chalcedonyt\COSProcessor\Factory\UOB\UOBBeneficiaryFactory;
 
-use Chalcedonyt\COSProcessor\Adapter\BeneficiaryAdapterInterface;
+use Chalcedonyt\COSProcessor\Adapter\Beneficiary\BeneficiaryAdapterInterface;
 use Chalcedonyt\COSProcessor\COSUploadProcessor;
 
 use Illuminate\Config\Repository;

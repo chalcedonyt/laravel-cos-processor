@@ -1,5 +1,5 @@
 <?php
-namespace Chalcedonyt\COSProcessor\Adapter;
+namespace Chalcedonyt\COSProcessor\Adapter\Beneficiary;
 
 interface BeneficiaryAdapterInterface
 {

@@ -6,7 +6,7 @@ use Chalcedonyt\COSProcessor\Factory\HSBC\Header\HSBCFileHeader;
 use Chalcedonyt\COSProcessor\Factory\HSBC\Header\HSBCBatchHeader;
 
 use Chalcedonyt\COSProcessor\Factory\HSBC\HSBCBeneficiaryFactory;
-use Chalcedonyt\COSProcessor\Adapter\BeneficiaryAdapterInterface;
+use Chalcedonyt\COSProcessor\Adapter\Beneficiary\BeneficiaryAdapterInterface;
 use Chalcedonyt\COSProcessor\COSUploadProcessor;
 
 use Illuminate\Config\Repository;
