@@ -17,8 +17,7 @@ class TestFileGenerator extends Orchestra\Testbench\TestCase{
         $this->app['config']->set('database.connections.sqlite.database', ':memory:');
         //read from the tests/config file.
         $config = require 'config/cos_processor_test.php';
-        $this -> app['config'] -> set('hsbc_example', $config['hsbc_example']);
-        $this -> app['config'] -> set('uob_example', $config['uob_example']);
+        $this -> app['config'] -> set('cos_processor', ['hsbc_example' => $config['hsbc_example'], 'uob_example' => $config['uob_example']]);
 
         $this -> migrate();
     }
@@ -52,7 +51,7 @@ class TestFileGenerator extends Orchestra\Testbench\TestCase{
     public function testHSBCDownload(){
         //create an array of BeneficiaryAdapterInterface
         $beneficiaries = TestPayment::all();
-        $cos = HSBCCOSUploadProcessorFactory::createCsvString($beneficiaries, 'hsbc_example');
+        $cos = HSBCCOSUploadProcessorFactory::createCsvString($beneficiaries, 'cos_processor.hsbc_example');
         echo $cos;
     }
 
@@ -60,7 +59,7 @@ class TestFileGenerator extends Orchestra\Testbench\TestCase{
         //create an array of BeneficiaryAdapterInterface
         $beneficiaries = TestPayment::all();
 
-        $cos = UOBCOSUploadProcessorFactory::createCsvString($beneficiaries, 'uob_example');
+        $cos = UOBCOSUploadProcessorFactory::createCsvString($beneficiaries, 'cos_processor.uob_example');
         echo $cos;
     }
 

@@ -26,7 +26,7 @@ Call the relevant COSUploadProcessorFactory subclass and pass in your data, and 
 
 ``` php
 $beneficiaries = TestPayment::all();
-$cos = HSBCCOSUploadProcessorFactory::createCsvString($beneficiaries, 'hsbc_example');
+$cos = HSBCCOSUploadProcessorFactory::createCsvString($beneficiaries, 'cos_processor.hsbc_example');
 echo $cos;
 ```
 
