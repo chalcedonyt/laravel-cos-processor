@@ -16,8 +16,7 @@ class COSProcessorServiceProvider extends ServiceProvider
     {
         $source_config = __DIR__ . '/../../config/cos_processor.php';
         $this->publishes([
-            $source_config => base_path('config/cos_processor.php'),
-            __DIR__.'/../views/provider.php' => base_path('app/Providers/COSProcessorServiceProvider.php')
+            $source_config => base_path('config/cos_processor.php')
         ]);
 
         // $this->loadViewsFrom(__DIR__ . '/../views', 'cos_processor');
