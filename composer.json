@@ -1,12 +1,14 @@
 {
     "name": "chalcedonyt/laravel-cos-processor",
     "type": "library",
-    "description": "Provides functionality to easily process COS (Cheque Outsourcing Services) files.",
+    "description": "Provides functionality to upload COS (Cheque Outsourcing Services) files.",
     "keywords": [
         "chalcedonyt",
         "cos",
         "cheque",
-        "cheque outsourcing services"
+        "cheque outsourcing services",
+        "hsbc",
+        "uob"
     ],
     "homepage": "https://github.com/chalcedonyt/laravel-cos-processor",
     "license": "MIT",
