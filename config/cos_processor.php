@@ -3,7 +3,7 @@ return [
     //copy the _example keys below and fill them in.
 
     'hsbc_example' => [
-        'beneficiary_adapter' => \Chalcedonyt\Adapter\ExampleBeneficiaryAdapter::class,
+        'beneficiary_adapter' => \Chalcedonyt\COSPRocessor\Adapter\ExampleBeneficiaryAdapter::class,
 
         //File Header
         'file_format'                           => 'IFILE',
@@ -37,7 +37,7 @@ return [
     ],
 
     'uob_example' => [
-        'beneficiary_adapter' => \Chalcedonyt\Adapter\ExampleBeneficiaryAdapter::class,
+        'beneficiary_adapter' => \Chalcedonyt\COSPRocessor\Adapter\ExampleBeneficiaryAdapter::class,
 
         //file header
         'company_id'                            => '',
