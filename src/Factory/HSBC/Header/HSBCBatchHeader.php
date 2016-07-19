@@ -20,12 +20,6 @@ class HSBCBatchHeader extends \Chalcedonyt\COSProcessor\Line\Header implements S
     const FILE_REFERENCE_PREFIX = 'IFILEPYT_';
 
     /**
-     * How many lines make up a beneficiary entry
-     * @var int
-     */
-    protected $beneficiaryLineHeight = 3;
-
-    /**
      * @param Beneficiary
      * @return BeneficiaryLines
      */

@@ -19,6 +19,12 @@ class HSBCFileHeader extends \Chalcedonyt\COSProcessor\Line\Header
     const FILE_REFERENCE_PREFIX = 'IFILEPYT_';
 
     /**
+     * How many lines make up a beneficiary entry
+     * @var int
+     */
+    protected $beneficiaryLineHeight = 3;
+    
+    /**
      * @return Line
      */
     public function getLine(){
