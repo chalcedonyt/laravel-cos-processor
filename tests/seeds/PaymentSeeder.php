@@ -20,7 +20,7 @@ class PaymentSeeder extends Seeder
         $user_seeds = [];
         while($i++ < 10 ){
             $user_seeds[]= [
-                'fullname' => $faker -> name,
+                'fullname' => $faker -> firstname().' '.$faker -> firstName().' '.$faker -> lastName(),
                 'email' => $faker -> email,
                 'address' => $faker -> address,
                 'title' => $faker -> title,

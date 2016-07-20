@@ -27,6 +27,7 @@ class UOBBatchTrailer extends Header
      */
     public function getLine(){
         $line = new Line();
+        $line -> setColumnDelimiter("");
         $columns = [
             'record_type'       => PresetStringColumnFactory::create('9', $label = 'record_type'),
             'no_trans'          => LeftPaddedZerofillStringColumnFactory::create( $this -> getBeneficiaryCount(), $length = 8, $label = 'no_trans'),

@@ -94,6 +94,12 @@ class Column implements Stringable
     }
 
     /**
+     * @return String
+     */
+    public function getLabel(){
+        return $this -> label;
+    }
+    /**
      * @param String
      */
     public function setLabel($label){
@@ -125,10 +131,12 @@ class Column implements Stringable
      * @param mixed
      */
     public function setValue($value){
-        if( $this -> maxLength !== null && strlen((string)$value) > $this -> maxLength ){
+        //set the max length to either maxLength or fixedLength
+        $max_length = ($this -> maxLength) ? $this -> maxLength : ($this -> fixedLength ? $this -> fixedLength : null );
+        if( $max_length !== null && strlen((string)$value) > $max_length ){
             if( $this -> label )
-                throw new COSProcessorColumnException(sprintf("Invalid length for the column %s (%s) - the max length for %s was %d", $this -> label, (string)$value, __CLASS__, $this -> maxLength));
-            else throw new COSProcessorColumnException(sprintf("Invalid length for %s - the max length for %s was %d", (string)$value, __CLASS__, $this -> maxLength));
+                throw new COSProcessorColumnException(sprintf("Invalid length for the column %s (%s) - the max length for %s was %d", $this -> label, (string)$value, __CLASS__, $max_length));
+            else throw new COSProcessorColumnException(sprintf("Invalid length for %s - the max length for %s was %d", (string)$value, __CLASS__, $max_length));
         }
         $this -> value = $value;
     }

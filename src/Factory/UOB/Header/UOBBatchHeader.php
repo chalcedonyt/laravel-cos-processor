@@ -24,6 +24,7 @@ class UOBBatchHeader extends Header
      */
     public function getLine(){
         $line = new Line();
+        $line -> setColumnDelimiter("");
         $columns = [
             'record_type'                   => PresetStringColumnFactory::create('1', $label = 'record_type'),
             'batch_no'                      => RightPaddedStringColumnFactory::create('', 20, $label = 'batch_no'),

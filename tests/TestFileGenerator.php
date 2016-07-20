@@ -60,7 +60,14 @@ class TestFileGenerator extends Orchestra\Testbench\TestCase{
         $beneficiaries = TestPayment::all();
 
         $cos = UOBCOSUploadProcessorFactory::createCsvString($beneficiaries, 'cos_processor.uob_example');
-        echo $cos;
+        //every line in a uob file except the first, must be exactly 900 characters wide
+        $i = 0;
+        foreach(explode("\r\n", $cos) as $line){
+            if($i++ >= 1){
+                $this -> assertEquals(900, strlen($line));
+            }
+        }
+
     }
 
     public function testHSBCUpload(){

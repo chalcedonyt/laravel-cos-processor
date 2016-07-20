@@ -20,7 +20,7 @@ class MyBeneficiaryAdapter extends BeneficiaryAdapterAbstract implements Benefic
         //Map the user's full name to name1, name2, name3
         $name_parts = static::getStringParts($model -> testUser -> fullname);
         for( $i = 1; $i <= count($name_parts); $i++ ){
-            if( !isset($name_parts[$i])) continue;
+            if( !isset($name_parts[$i-1])) continue;
             $var = "name".$i;
             $this -> $var = $name_parts[$i-1];
         }
@@ -28,7 +28,7 @@ class MyBeneficiaryAdapter extends BeneficiaryAdapterAbstract implements Benefic
         //Map the user's address to address1, address2, address3
         $address_parts = static::getStringParts($model -> testUser -> address);
         for( $i = 1; $i <= count($address_parts); $i++ ){
-            if( !isset($address_parts[$i])) continue;
+            if( !isset($address_parts[$i-1])) continue;
             $var = "address".$i;
             $this -> $var = $address_parts[$i-1];
         }
@@ -89,6 +89,7 @@ class MyBeneficiaryAdapter extends BeneficiaryAdapterAbstract implements Benefic
         if( count( $string_parts ) > $max_parts){
             throw new COSProcessorColumnException(sprintf("The string %s was too long", $string));
         }
+
         return $string_parts;
     }
 
