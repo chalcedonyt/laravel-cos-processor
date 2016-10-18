@@ -7,7 +7,7 @@ use Adapter\MyBeneficiaryAdapter;
 use Chalcedonyt\COSProcessor\Factory\HSBC\HSBCCOSUploadProcessorFactory;
 use Chalcedonyt\COSProcessor\Factory\UOB\UOBCOSUploadProcessorFactory;
 
-use Chalcedonyt\COSProcessor\Factory\HSBC\Result\HSBCCOSResultAdapter;
+use Chalcedonyt\COSProcessor\Adapter\Result\HSBC\HSBCCOSResultAdapter;
 
 class TestFileGenerator extends Orchestra\Testbench\TestCase{
 

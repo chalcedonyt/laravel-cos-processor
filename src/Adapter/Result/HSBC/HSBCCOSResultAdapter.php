@@ -1,6 +1,6 @@
 <?php
 
-namespace Chalcedonyt\COSProcessor\Factory\HSBC\Result;
+namespace Chalcedonyt\COSProcessor\Adapter\Result\HSBC;
 
 use Chalcedonyt\COSProcessor\Adapter\Result\COSResultAdapterAbstract;
 use Chalcedonyt\COSProcessor\Result\COSResult;
