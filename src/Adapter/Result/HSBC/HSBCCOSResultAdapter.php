@@ -29,8 +29,10 @@ class HSBCCOSResultAdapter extends COSResultAdapterAbstract
         $result -> setFullname(trim($this -> columns[self::OFFSET_FULLNAME]));
         $result -> setAmount(trim($this -> columns[self::OFFSET_AMOUNT]));
         $result -> setCurrency(trim($this -> columns[self::OFFSET_CURRENCY]));
-
+        //datetime is now patched to return d/m/Y
         $datetime = \DateTime::createFromFormat('d/m/y', trim($this -> columns[self::OFFSET_DATETIME]));
+        if( !$datetime )
+            $datetime = \DateTime::createFromFormat('d/m/Y', trim($this -> columns[self::OFFSET_DATETIME]));
         $result -> setDateTime($datetime);
         $this -> cosResult = $result;
     }
