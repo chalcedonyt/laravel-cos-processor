@@ -18,9 +18,9 @@ class UOBCOSUploadProcessorFactory
      * @param Collection of entries to be passed into the adapter
      * @param String The config key to read from
      * @param Int The sequence number for file name generation. If multiple files are generated in a day, this number should be incremented.
-     * @return String
+     * @return COSUploadProcessor
      */
-    public static function createCsvString($beneficiaries, $config_key, $sequence_number = 1)
+    public static function create($beneficiaries, $config_key, $sequence_number = 1)
     {
         $config = new Repository(config($config_key));
         $adapter_class = $config['beneficiary_adapter'];
@@ -51,6 +51,6 @@ class UOBCOSUploadProcessorFactory
         $cos -> setBatchTrailer($batch_trailer);
         $cos -> setBeneficiaryLines($beneficiary_lines);
         $cos -> setIdentifier($file_header -> getCheckSum());
-        return $cos -> getString();
+        return $cos;
     }
 }

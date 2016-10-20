@@ -16,9 +16,9 @@ class HSBCCOSUploadProcessorFactory
     /**
      * @param Collection of entries to be passed into the adapter
      * @param String The key to read the config from
-     * @return String
+     * @return COSUploadProcessor
      */
-    public static function createCsvString($beneficiaries, $config_key)
+    public static function create($beneficiaries, $config_key)
     {
         $config = new Repository(config($config_key));
         $adapter_class = $config['beneficiary_adapter'];
@@ -40,6 +40,6 @@ class HSBCCOSUploadProcessorFactory
         $cos -> setBatchHeader($batch_header);
         $cos -> setBeneficiaryLines($beneficiary_lines);
         $cos -> setIdentifier($file_header -> getFileReference());
-        return $cos -> getString();
+        return $cos;
     }
 }
