@@ -28,6 +28,10 @@ class COSUploadProcessor implements Stringable
      */
     protected $beneficiaryLines;
 
+    /**
+    * @var String
+    */
+    protected $identifier;
     protected $lineBreak = "\r\n";
     protected $columnDelimiter = ",";
 
@@ -44,6 +48,13 @@ class COSUploadProcessor implements Stringable
     public function addBeneficiary(BeneficiaryAdapterInterface $beneficiary){
         $this -> beneficiaries[]= $beneficiary;
     }
+
+    /**
+    * @return String An identifier for the batch that was generated. 
+    */    
+    public function getIdentifier(){
+        return $this -> identifier;
+    }   
 
     /**
      * @return String
@@ -101,6 +112,13 @@ class COSUploadProcessor implements Stringable
      */
     public function setColumnDelimiter($string){
         $this -> columnDelimiter = $string;
+    }
+
+    /**
+     * @param String
+     */
+    public function setIdentifier($string){
+        $this -> identifier = $string;
     }
 
     /**

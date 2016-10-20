@@ -50,7 +50,7 @@ class UOBCOSUploadProcessorFactory
         $cos -> setBatchHeader($batch_header);
         $cos -> setBatchTrailer($batch_trailer);
         $cos -> setBeneficiaryLines($beneficiary_lines);
-
+        $cos -> setIdentifier($file_header -> getCheckSum());
         return $cos -> getString();
     }
 }

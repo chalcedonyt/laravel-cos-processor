@@ -4,6 +4,7 @@ namespace Chalcedonyt\COSProcessor\Adapter\Result\HSBC;
 
 use Chalcedonyt\COSProcessor\Adapter\Result\COSResultAdapterAbstract;
 use Chalcedonyt\COSProcessor\Result\COSResult;
+use Chalcedonyt\COSProcessor\Exceptions\COSProcessorException;
 
 class HSBCCOSResultAdapter extends COSResultAdapterAbstract
 {
@@ -19,7 +20,7 @@ class HSBCCOSResultAdapter extends COSResultAdapterAbstract
      */
     public function __construct($string){
         parent::__construct($string);
-
+        
         $result = new COSResult();
         $result -> setPaymentId( trim($this -> columns[self::OFFSET_PAYMENT_ID]));
         $result -> setTransactionId( trim($this -> columns[self::OFFSET_TRANSACTION_ID]));
