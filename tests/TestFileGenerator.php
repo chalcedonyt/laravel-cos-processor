@@ -89,6 +89,7 @@ class TestFileGenerator extends Orchestra\Testbench\TestCase{
         $this -> assertEquals(200, $results[1] -> amount);
         $this -> assertEquals(123458, $results[2] -> paymentId);
         $this -> assertEquals('CIFB04008522', $results[3] -> transactionId);
+        $this -> assertEquals('IFILEPYT_1445567761', $results[4] -> fileIdentifier);
         $this -> assertEquals(\DateTime::createFromFormat('Y-m-d', '2015-11-05'), $results[4] -> dateTime);
 
     }

@@ -8,6 +8,7 @@ use Chalcedonyt\COSProcessor\Exceptions\COSProcessorException;
 
 class HSBCCOSResultAdapter extends COSResultAdapterAbstract
 {
+    const OFFSET_FILE_ID = 0;
     const OFFSET_PAYMENT_ID = 1;
     const OFFSET_TRANSACTION_ID = 2;
     const OFFSET_FULLNAME = 12;
@@ -22,6 +23,7 @@ class HSBCCOSResultAdapter extends COSResultAdapterAbstract
         parent::__construct($string);
         
         $result = new COSResult();
+        $result -> setFileIdentifier( trim($this -> columns[self::OFFSET_FILE_ID]));
         $result -> setPaymentId( trim($this -> columns[self::OFFSET_PAYMENT_ID]));
         $result -> setTransactionId( trim($this -> columns[self::OFFSET_TRANSACTION_ID]));
         $result -> setFullname(trim($this -> columns[self::OFFSET_FULLNAME]));

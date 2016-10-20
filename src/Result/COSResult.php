@@ -25,12 +25,17 @@ class COSResult
     protected $fullname;
 
     /**
-     * @var int
+    * @var String The file identifier, from a previously generated COS csv file.
+    */
+    protected $fileIdentifier;
+
+    /**
+     * @var int The payment id, usually from a model
      */
     protected $paymentId;
 
     /**
-     * @var int
+     * @var int The bank transaction id
      */
     protected $transactionId;
 
@@ -53,6 +58,12 @@ class COSResult
      */
     public function setDateTime(\DateTime $dateTime ){
         $this -> dateTime = $dateTime;
+    }
+    /**
+    * @param String
+    */
+    public function setFileIdentifier($identifier){
+        $this -> fileIdentifier = $identifier;
     }
 
     /**
