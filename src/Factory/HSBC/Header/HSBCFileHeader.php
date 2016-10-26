@@ -13,8 +13,9 @@ use Chalcedonyt\COSProcessor\Factory\Column\PresetStringColumnFactory;
 use Chalcedonyt\COSProcessor\Factory\Column\RightPaddedStringColumnFactory;
 use Chalcedonyt\COSProcessor\Factory\Column\VariableLengthStringColumnFactory;
 
+use Chalcedonyt\COSProcessor\Factory\BeneficiaryFactoryInterface;
 
-class HSBCFileHeader extends \Chalcedonyt\COSProcessor\Line\Header
+class HSBCFileHeader extends \Chalcedonyt\COSProcessor\Line\Header implements BeneficiaryFactoryInterface
 {
     const FILE_REFERENCE_PREFIX = 'IFILEPYT_';
 
@@ -53,6 +54,20 @@ class HSBCFileHeader extends \Chalcedonyt\COSProcessor\Line\Header
         //fix to the current minute
         $time = strtotime(date('Y-m-d H:i:00'));
         return self::FILE_REFERENCE_PREFIX.$time;
+    }
+
+    /**
+    * @return String
+    */
+    public function getFileName(){
+        return 'hsbc_cos_'.time();
+    }
+
+    /**
+    * @return String
+    */
+    public function getFileExtension(){
+        return 'csv';
     }
 
 }

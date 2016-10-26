@@ -95,6 +95,13 @@ class UOBFileHeader extends Header
     }
 
     /**
+    * @return String
+    */
+    public function getFileExtension(){
+        return 'txt';
+    }
+
+    /**
      * Returns a hashcode as defined in the UOB documentation
      * @param int
      * @return int
