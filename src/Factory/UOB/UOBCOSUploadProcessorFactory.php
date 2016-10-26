@@ -35,8 +35,11 @@ class UOBCOSUploadProcessorFactory
 
         $cos = new COSUploadProcessor($beneficiaries, $config_key);
 
+        $file_name = static::getFileName($sequence_number);
+        $cos -> setFileName($file_name);
+        $cos -> setFileExtension('txt');
         $file_header = new UOBFileHeader($beneficiaries, $config_key);
-        $file_header -> setSequenceNumber($sequence_number);
+        $file_header -> setFileName($file_name);
         //UOB uses fixed length strings, so no column delimiters are needed
         $file_header -> setColumnDelimiter("");
 
@@ -52,5 +55,12 @@ class UOBCOSUploadProcessorFactory
         $cos -> setBeneficiaryLines($beneficiary_lines);
         $cos -> setIdentifier($file_header -> getCheckSum());
         return $cos;
+    }
+
+    /**
+    * @return String
+    */
+    public static function getFileName($sequence_number){
+        return sprintf("UCPI%s%s", date('dm'), str_pad($sequence_number, 2, STR_PAD_LEFT, '0') );
     }
 }

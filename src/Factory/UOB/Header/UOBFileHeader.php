@@ -22,9 +22,9 @@ class UOBFileHeader extends Header
     protected $columnDelimiter = "";
 
     /**
-     * @var integer
-     */
-    protected $sequenceNumber;
+    * @var String
+    */
+    protected $fileName;
 
     /**
      * @return Line
@@ -35,7 +35,7 @@ class UOBFileHeader extends Header
 
         $columns = [
             'record_type'       => PresetStringColumnFactory::create('0', $label = 'record_type'),
-            'file_name'         => VariableLengthStringColumnFactory::create( $this -> getFileName(), 10, $label = 'file_name'),
+            'file_name'         => VariableLengthStringColumnFactory::create( $this -> fileName, 10, $label = 'file_name'),
             'creation_date'     => RightPaddedStringColumnFactory::create( date('Ymd'), 8, $label = 'creation_date'),
             'creation_time'     => RightPaddedStringColumnFactory::create( date('His'), 6, $label = 'creation_time'),
             'company_id'        => ConfigurableStringColumnFactory::create( $config = $this -> config, 'company_id', $label = 'company_id'),
@@ -88,20 +88,6 @@ class UOBFileHeader extends Header
     }
 
     /**
-     * @return String the File name.
-     */
-    public function getFileName(){
-        return sprintf("UCPI%s%s", date('dm'), str_pad($this -> sequenceNumber, 2, STR_PAD_LEFT, '0') );
-    }
-
-    /**
-    * @return String
-    */
-    public function getFileExtension(){
-        return 'txt';
-    }
-
-    /**
      * Returns a hashcode as defined in the UOB documentation
      * @param int
      * @return int
@@ -137,10 +123,9 @@ class UOBFileHeader extends Header
     }
 
     /**
-     * @param integer
-     */
-    public function setSequenceNumber($number){
-        $this -> sequenceNumber = $number;
+    * @var String
+    */
+    public function setFileName($filename){
+        $this -> fileName = $filename;
     }
-
 }

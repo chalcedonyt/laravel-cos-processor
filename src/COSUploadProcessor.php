@@ -35,6 +35,16 @@ class COSUploadProcessor implements Stringable
     protected $lineBreak = "\r\n";
     protected $columnDelimiter = ",";
 
+    /** 
+    * @var String
+    */
+    protected $fileName;
+
+    /** 
+    * @var String
+    */
+    protected $fileExtension;
+
     /**
      * @param array BeneficiaryAdapterInterface
      */
@@ -136,5 +146,34 @@ class COSUploadProcessor implements Stringable
         $this -> fileHeader = $header;
     }
 
+    /**
+     * @param String
+     */
+    public function setFileName($filename)
+    {
+        $this -> fileName = $filename;
+    }
+
+    /**
+     * @param String
+     */
+    public function setFileExtension($extension)
+    {
+        $this -> fileExtension = $extension;
+    }
+
+    /**
+    * @return String
+    */
+    public function getFileName(){
+        return $this -> fileName;
+    }
+
+    /**
+    * @return String
+    */
+    public function getFileExtension(){
+        return $this -> fileExtension;
+    }
 
 }

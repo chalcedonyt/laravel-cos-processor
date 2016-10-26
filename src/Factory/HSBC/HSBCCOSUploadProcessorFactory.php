@@ -40,6 +40,8 @@ class HSBCCOSUploadProcessorFactory
         $cos -> setBatchHeader($batch_header);
         $cos -> setBeneficiaryLines($beneficiary_lines);
         $cos -> setIdentifier($file_header -> getFileReference());
+        $cos -> setFileName('hsbc_cos_'.time());
+        $cos -> setFileExtension('csv');
         return $cos;
     }
 }
